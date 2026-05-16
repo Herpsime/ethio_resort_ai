@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI Chat | Ethio Resort</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #f5f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .chat-box {
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .chat-header {
+        background: #1e3a8a;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+      }
+
+      .input-area {
+        display: flex;
+        border-top: 1px solid #ccc;
+      }
+
+      .input-area input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+      }
+
+      .input-area button {
+        padding: 10px;
+        background: #1e3a8a;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .user {
+        text-align: right;
+        margin: 5px 0;
+      }
+
+      .bot {
+        text-align: left;
+        margin: 5px 0;
+      }
+
+      .bubble {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 10px;
+        max-width: 70%;
+      }
+
+      .user .bubble {
+        background: #1e3a8a;
+        color: white;
+      }
+
+      .bot .bubble {
+        background: #e5e7eb;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="chat-box">
+      <div class="chat-header">🤖 Ethio AI Assistant</div>
+
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <div class="input-area">
+        <input type="text" id="userInput" placeholder="Ask something..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+  </body>
+</html>

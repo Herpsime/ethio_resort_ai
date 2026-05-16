@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rooms | Ethio Resort AI</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      /* Page-specific styling */
+      .rooms-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 20px;
+      }
+
+      .rooms-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .rooms-header h1 {
+        font-size: 2rem;
+        color: #1a6b44;
+      }
+
+      .room-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .room-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      .room-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .room-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .room-info {
+        padding: 15px;
+      }
+
+      .room-info h3 {
+        margin-bottom: 8px;
+      }
+
+      .price {
+        color: #2a7f54;
+        font-weight: bold;
+        margin: 8px 0;
+      }
+
+      .features {
+        font-size: 0.85rem;
+        color: #555;
+        margin-bottom: 12px;
+      }
+
+      .book-btn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #1f6e43;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .book-btn:hover {
+        background: #145c3b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="rooms-container">
+      <!-- HEADER -->
+      <div class="rooms-header">
+        <h1>🏨 Our Rooms</h1>
+        <p>Choose your perfect stay at Ethio Resort</p>
+      </div>
+
+      <!-- ROOMS GRID -->
+      <div class="room-grid">
+        <!-- ROOM 1 -->
+        <div class="room-card">
+          <img src="room1.jpg" />
+          <div class="room-info">
+            <h3>Deluxe Room</h3>
+            <div class="price">800 ETB / night</div>
+            <div class="features">✔ Free WiFi • ✔ Queen Bed • ✔ City View</div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+
+        <!-- ROOM 2 -->
+        <div class="room-card">
+          <img src="room2.jpg" />
+          <div class="room-info">
+            <h3>Lake View Suite</h3>
+            <div class="price">1800 ETB / night</div>
+            <div class="features">✔ Balcony • ✔ King Bed • ✔ Lake View</div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+
+        <!-- ROOM 3 -->
+        <div class="room-card">
+          <img src="room3.jpg" />
+          <div class="room-info">
+            <h3>Family Room</h3>
+            <div class="price">1400 ETB / night</div>
+            <div class="features">
+              ✔ 2 Beds • ✔ Large Space • ✔ Kids Friendly
+            </div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+
+        <!-- ROOM 4 -->
+        <div class="room-card">
+          <img src="room4.jpg" />
+          <div class="room-info">
+            <h3>Luxury Villa</h3>
+            <div class="price">3000 ETB / night</div>
+            <div class="features">
+              ✔ Private Pool • ✔ Garden • ✔ Premium Service
+            </div>
+            <button class="book-btn">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="script.js" defer></script>
+
+    <script>
+      // Simple booking redirect
+      document.querySelectorAll(".book-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          window.location.href = "booking.html";
+        });
+      });
+    </script>
+  </body>
+</html>

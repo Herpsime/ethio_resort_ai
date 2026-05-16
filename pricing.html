@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pricing - Ethio Resort AI</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background: #1e3a8a;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      }
+
+      .container {
+        padding: 30px;
+        max-width: 900px;
+        margin: auto;
+      }
+
+      .pricing-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #1e3a8a;
+      }
+
+      .demand-buttons {
+        margin-top: 20px;
+        text-align: center;
+      }
+
+      .demand-btn {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #e5e7eb;
+      }
+
+      .demand-btn.active {
+        background: #1e3a8a;
+        color: white;
+      }
+
+      #aiSuggestionMsg {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+        color: #374151;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>💰 Smart Pricing System</h1>
+    </header>
+
+    <div class="container">
+      <div class="pricing-card">
+        <h2>Low Room</h2>
+        <p class="price" id="lowPrice">800 ETB</p>
+      </div>
+
+      <div class="pricing-card">
+        <h2>Medium Room</h2>
+        <p class="price" id="mediumPrice">1200 ETB</p>
+      </div>
+
+      <div class="pricing-card">
+        <h2>Luxury Room</h2>
+        <p class="price" id="highPrice">1800 ETB</p>
+      </div>
+
+      <div class="demand-buttons">
+        <button class="demand-btn active" data-demand="high">
+          High Demand
+        </button>
+        <button class="demand-btn" data-demand="medium">Normal Demand</button>
+        <button class="demand-btn" data-demand="low">Low Demand</button>
+      </div>
+
+      <div id="aiSuggestionMsg">📈 High demand → increase prices</div>
+    </div>
+
+    <!-- LINK YOUR JS -->
+    <script src="app.js"></script>
+  </body>
+</html>

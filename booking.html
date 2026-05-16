@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Booking | Ethio Resort AI</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #f5f7fa;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        background: #1e3a8a;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      .total {
+        margin-top: 10px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .success {
+        margin-top: 15px;
+        color: green;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>📅 Book Your Stay</h2>
+
+      <form id="bookingForm">
+        <input type="text" id="name" placeholder="Full Name" />
+
+        <input type="email" id="email" placeholder="Email" />
+
+        <select id="roomType">
+          <option value="">Select Room Type</option>
+          <option value="low">Low Room</option>
+          <option value="medium">Medium Room</option>
+          <option value="high">Luxury Room</option>
+        </select>
+
+        <input type="number" id="days" placeholder="Number of Days" />
+
+        <div class="total" id="totalPrice">Total: 0 ETB</div>
+
+        <button type="submit">Book Now</button>
+      </form>
+
+      <div class="success" id="successMsg"></div>
+    </div>
+
+    <!-- OPTIONAL: connect pricing data -->
+    <script src="pricingdata.js"></script>
+    <script src="booking.js"></script>
+  </body>
+</html>

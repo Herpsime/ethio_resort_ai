@@ -1,0 +1,20 @@
+<script>
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (!user) {
+    alert("Please login first!");
+    window.location.href = "login.html";
+  } else {
+    // show user name if element exists
+    const nameEl = document.getElementById("userName");
+    if (nameEl) {
+      nameEl.innerText = "Welcome, " + user.name;
+    }
+  }
+
+  // logout function
+  function logout() {
+    localStorage.removeItem("currentUser");
+    window.location.href = "login.html";
+  }
+</script>

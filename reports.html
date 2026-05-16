@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reports | Ethio Resort AI</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .reports-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 30px 20px;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .header h1 {
+        color: #1a6b44;
+      }
+
+      /* KPI cards */
+      .kpi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .kpi-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .kpi-card h2 {
+        color: #2a7f54;
+      }
+
+      /* charts */
+      .chart-section {
+        background: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .bars {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        height: 150px;
+        margin-top: 20px;
+      }
+
+      .bar {
+        flex: 1;
+        background: #2a7f54;
+        border-radius: 10px;
+        text-align: center;
+        color: white;
+        font-size: 10px;
+      }
+
+      /* table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+
+      th {
+        background: #1f6e43;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reports-container">
+      <!-- HEADER -->
+      <div class="header">
+        <h1>📊 Resort Reports</h1>
+        <p>Performance insights & analytics</p>
+      </div>
+
+      <!-- KPI SECTION -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <h2 id="totalRevenue">120,000 ETB</h2>
+          <p>Total Revenue</p>
+        </div>
+
+        <div class="kpi-card">
+          <h2 id="totalBookings">320</h2>
+          <p>Total Bookings</p>
+        </div>
+
+        <div class="kpi-card">
+          <h2 id="avgStay">3 Nights</h2>
+          <p>Average Stay</p>
+        </div>
+
+        <div class="kpi-card">
+          <h2 id="occupancyRate">78%</h2>
+          <p>Occupancy Rate</p>
+        </div>
+      </div>
+
+      <!-- BOOKINGS CHART -->
+      <div class="chart-section">
+        <h3>📅 Weekly Bookings</h3>
+        <div class="bars" id="bookingBars"></div>
+      </div>
+
+      <!-- REVENUE TABLE -->
+      <div class="chart-section">
+        <h3>💰 Revenue Breakdown</h3>
+
+        <table>
+          <tr>
+            <th>Room Type</th>
+            <th>Bookings</th>
+            <th>Revenue</th>
+          </tr>
+
+          <tr>
+            <td>Deluxe Room</td>
+            <td>120</td>
+            <td>96,000 ETB</td>
+          </tr>
+
+          <tr>
+            <td>Lake View Suite</td>
+            <td>80</td>
+            <td>144,000 ETB</td>
+          </tr>
+
+          <tr>
+            <td>Family Room</td>
+            <td>70</td>
+            <td>98,000 ETB</td>
+          </tr>
+
+          <tr>
+            <td>Luxury Villa</td>
+            <td>50</td>
+            <td>150,000 ETB</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+
+    <script>
+      // Weekly booking bars
+      const data = [30, 50, 70, 60, 90, 120, 100];
+      const container = document.getElementById("bookingBars");
+
+      if (container) {
+        data.forEach((val) => {
+          const bar = document.createElement("div");
+          bar.className = "bar";
+          bar.style.height = val + "px";
+          bar.innerText = val;
+          container.appendChild(bar);
+        });
+      }
+    </script>
+  </body>
+</html>

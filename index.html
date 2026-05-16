@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AI Smart Resort Assistant</title>
+
+    <!-- LINK TO CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>🤖 AI Resort Assistant</h1>
+
+    <div class="container">
+      <div class="phone" onclick="openViewer(0)">
+        <img src="image1.png" class="screen" />
+      </div>
+
+      <div class="phone" onclick="openViewer(1)">
+        <img src="image2.png" class="screen" />
+      </div>
+
+      <div class="phone" onclick="openViewer(2)">
+        <img src="image3.png" class="screen" />
+      </div>
+    </div>
+
+    <!-- FULLSCREEN VIEW -->
+    <div class="viewer" id="viewer">
+      <span class="close" onclick="closeViewer()">❌</span>
+      <img id="viewerImg" />
+
+      <div class="controls">
+        <button onclick="prev()">⬅️ Prev</button>
+        <button onclick="next()">Next ➡️</button>
+      </div>
+    </div>
+
+    <script>
+      let images = ["image1.png", "image2.png", "image3.png"];
+      let current = 0;
+
+      function openViewer(index) {
+        current = index;
+        document.getElementById("viewer").style.display = "flex";
+        document.getElementById("viewerImg").src = images[current];
+      }
+
+      function closeViewer() {
+        document.getElementById("viewer").style.display = "none";
+      }
+
+      function next() {
+        current = (current + 1) % images.length;
+        document.getElementById("viewerImg").src = images[current];
+      }
+
+      function prev() {
+        current = (current - 1 + images.length) % images.length;
+        document.getElementById("viewerImg").src = images[current];
+      }
+    </script>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+      function logout() {
+        localStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>
